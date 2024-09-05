@@ -1,0 +1,43 @@
+DEBUT
+    // Initialisation des compteurs
+    longueur <- 0
+    nombre_de_mots <- 0
+    nombre_de_voyelles <- 0
+
+    // Définir l'ensemble des voyelles
+    voyelles <- "aeiouAEIOU"
+
+    // Lire la phrase caractère par caractère
+    POUR i allant de 0 à longueur de la phrase - 1 FAIRE
+        caractere <- caractère à la position i dans la phrase
+
+        // Incrémenter le compteur de longueur
+        longueur <- longueur + 1
+
+        // Vérifier si le caractère est une voyelle
+        SI voyelles contient caractere ALORS
+            nombre_de_voyelles <- nombre_de_voyelles + 1
+        FIN SI
+
+        // Vérifier si le caractère est un espace
+        SI caractere est un espace ALORS
+            nombre_de_mots <- nombre_de_mots + 1
+        FIN SI
+    FIN POUR
+
+    // Vérifier si le dernier caractère est un point et ajuster les compteurs
+    SI dernier caractère de la phrase est un point ALORS
+        longueur <- longueur - 1 // Exclure le point du comptage de longueur
+        nombre_de_mots <- nombre_de_mots + 1 // Compter le dernier mot
+    FIN SI
+
+    // Si la phrase n'est pas vide et commence par un mot
+    SI longueur > 0 ET premier caractère de la phrase n'est pas un espace ALORS
+        nombre_de_mots <- nombre_de_mots + 1
+    FIN SI
+
+    // Afficher les résultats
+    AFFICHER "Longueur : ", longueur
+    AFFICHER "Nombre de mots : ", nombre_de_mots
+    AFFICHER "Nombre de voyelles : ", nombre_de_voyelles
+FIN
